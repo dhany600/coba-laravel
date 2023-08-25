@@ -1,0 +1,81 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin: 0;
+  background-color: greenyellow;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+@media only screen and (max-width: 422px) {
+  .card-flex-button a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .elementor.elementor-location-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .elementor.elementor-location-footer nav.elementor-nav-menu--main.elementor-nav-menu__container.elementor-nav-menu--layout-vertical.e--pointer-underline.e--animation-fade {
+    display: block;
+  }
+  .elementor.elementor-location-footer nav.elementor-nav-menu--main.elementor-nav-menu__container.elementor-nav-menu--layout-vertical.e--pointer-underline.e--animation-fade .elementor-nav-menu.sm-vertical li.menu-item.menu-item-type-post_type.menu-item-object-page a.elementor-item {
+    font-size: 10px;
+  }
+  .elementor.elementor-location-footer nav.elementor-nav-menu--main.elementor-nav-menu__container.elementor-nav-menu--layout-vertical.e--pointer-underline.e--animation-fade a.elementor-item.elementor-item-active::after,
+  .elementor.elementor-location-footer nav.elementor-nav-menu--main.elementor-nav-menu__container.elementor-nav-menu--layout-vertical.e--pointer-underline.e--animation-fade a.elementor-item::after {
+    background-color: transparent;
+  }
+  .slider-school-facilities figcaption.elementor-image-carousel-caption {
+    padding: 10px 0;
+    font-size: 10px;
+  }
+  .slider-school-facilities .elementor-image-carousel-wrapper.swiper-container.swiper-container-initialized.swiper-container-horizontal {
+    width: 160%;
+    overflow: visible;
+  }
+  .slider-school-facilities .elementor-image-carousel.swiper-wrapper.swiper-image-stretch {
+    margin-left: -30px;
+  }
+  .slider-school-facilities img.swiper-slide-image {
+    display: block;
+    height: 200px;
+    line-height: 200px;
+    overflow: hidden;
+  }
+}
+.slider-school-facilities .elementor-image-carousel-wrapper.swiper-container.swiper-container-initialized.swiper-container-horizontal {
+  width: 140%;
+  overflow: visible;
+}
+.slider-school-facilities figcaption.elementor-image-carousel-caption {
+  color: #B63E3E;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  padding: 18px 0;
+  font-weight: 700;
+  font-size: 19px;
+}
