@@ -1,13 +1,13 @@
 <?php
 
 use App\Models\Category;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,13 @@ use App\Http\Controllers\DashboardPostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// GET - Request a Resource
+// POST - Create a New Resource
+// PUT - Update a Resource (Change all data inside)
+// PATCH - Modify a Resource (Change some data only inside the row)
+// DELETE - Delete Resource
+
 
 Route::get('/', function () {
     return view('home', [
@@ -77,7 +84,17 @@ Route::get('/dashboard', function(){
     return view('dashboard.index');
 })->middleware('auth');
 
-
 // this checkSlug will connect into DashboardPostController
+// Route::get('/dashboard/posts/{id}', [DashboardPostController::class, 'checkSlug'])->middleware('auth')->name('checkSlug');
+// backup
+// Route::get('/dashboard/posts/{id}', [DashboardPostController::class, 'edit'])->middleware('auth')->name('checkSlug');
+// Route::get('/dashboard/posts/{slug}', [DashboardPostController::class, 'destroy'])->middleware('auth');
+// Route::get('/dashboard/posts', [DashboardPostController::class, 'postView'])->name('post.postView');
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+// Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+// Route::get('users', [UserController::class, 'index'])->name('userss.index');
+
+Route::resource('/dashboard/users', UserController::class);
+Route::post('delete-user', [UserController::class, 'destroy']);

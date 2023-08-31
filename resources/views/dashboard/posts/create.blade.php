@@ -81,13 +81,14 @@
             </form>
         </div>
     </div>
-
+    @section('js')
     <script>
         const title = document.querySelector('#title');
         const slug = document.querySelector('#slug');
 
         title.addEventListener('change', function(){
             // checkSlug call into web.php
+            console.log(document.querySelector('#title'))
             fetch('/dashboard/posts/checkSlug?title=' + title.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
@@ -110,4 +111,5 @@
             display: none;
         }
     </style>
+    @endsection
 @endsection

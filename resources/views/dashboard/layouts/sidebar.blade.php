@@ -13,6 +13,12 @@
                     My Posts
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}" href="/dashboard/users">
+                    <span data-feather="file"></span>
+                    Users Manage
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

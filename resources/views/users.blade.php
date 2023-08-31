@@ -39,7 +39,7 @@
                         {{ $post->category->name }}
                     </td>
                     <td>
-                        <a class="px-2" href="/dashboard/posts/{{ $post->slug }}">
+                        <a class="px-2" href="/dashboard/postss/{{ $post->slug }}">
                             Show Detail
                         </a>
                         {{-- bisa cek route resource melalui 'php artisan route:list' --}}
@@ -59,61 +59,5 @@
             </tbody>
         </table>
     </div>
-    
-    @section('js')
-        <script type="text/javascript">
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $(function () {
-                var table = $('.data-table').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    ajax: "{{ url('/dashboard/users') }}",
-                    columns: [{
-                            data: 'id',
-                            name: 'id'
-                        },
-                        {
-                            data: 'name',
-                            name: 'name'
-                        },
-                        {
-                            data: 'email',
-                            name: 'email'
-                        },
-                        {
-                            data: 'action',
-                            name: 'action',
-                            orderable: false,
-                            searchable: false
-                        },
-                    ]
-                });
-        
-            });
-            function deleteFuncUser(id) {
-                if (confirm("Delete Record?") == true) {
-                    var id = id;
 
-                    // ajax
-                    $.ajax({
-                        type: "POST",
-                        url: "{{ url('delete-user') }}",
-                        data: {
-                            id: id
-                        },
-                        dataType: 'json',
-                        success: function (res) {
-
-                            var oTable = $('#ajax-crud-datatable-user').dataTable();
-                            oTable.fnDraw(false);
-                        }
-                    });
-                }
-            }
-        </script>
-    @endsection
-@endsection
+        @endsection
